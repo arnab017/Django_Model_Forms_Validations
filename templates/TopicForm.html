@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Form</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            background-color: black;
+            color: white;
+        }
+        h1{
+            margin-bottom: 40px;
+        }
+        form{
+            border: 1px solid grey;
+            width: fit-content;
+            box-shadow: -10px 10px 30px grey;
+            border-radius: 20px;
+            padding: 30px;
+            animation: mymove 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes mymove {
+            from {box-shadow: -20px 20px 30px white;}
+            to {box-shadow: 20px 20px 30px white;}
+        }
+        input[type="submit"]{
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            background-color: white;
+            color: black;
+            border-radius: 20px;
+            transition: .5s;
+        }
+        input{
+            font-size: 1.1em;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(154, 191, 240);
+            box-shadow: -10px 10px 20px grey;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>TOPIC FORM</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <table cellpadding="10">
+                <tr>{{TMFO}}</tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access-Record Form</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+        }
+        h1{
+            margin-bottom: 40px;
+        }
+        form{
+            width: fit-content;
+            box-shadow: -10px 10px 30px grey;
+            border-radius: 20px;
+            padding: 30px;
+            animation: mymove 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        select{
+            width: 100%;
+            font-size: 1.1em;
+        }
+        input{
+            font-size: 1.1em;
+        }
+        input[type="submit"]{
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+            transition: .6s;
+        }
+        input[type="submit"]:hover{
+            background-color: rgb(16, 70, 141);
+            box-shadow: -10px 10px 20px black;
+        }
+        
+        @keyframes mymove {
+            from {box-shadow: -20px 20px 30px grey;}
+            to {box-shadow: 20px 20px 30px grey;}
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>ACCESS-RECORD FORM</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <table cellpadding="10">
+                <tr>{{AMFO}}</tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html>
